@@ -1,5 +1,6 @@
 import React from 'react'
 import './Movies.css'
+import { useState } from 'react';
 
 function Rendering() {
   const datas=[
@@ -75,24 +76,32 @@ function Rendering() {
     }
     ];
   return (
-    <div>
-      {datas.map((data)=>{return <Movies movie={data}/>})}
-      
+    <div className='movie-list'>
+      {datas.map((data,i)=>{return <Movies movie={data} key={i}/>})}  
     </div>
   )
 }
 
 
-const Movies = (props) => {
+const Movies = ({movie}) => {
+  const style={
+    color:movie.rating>8?"crimson":"blue"
+  }
+  
+  const [Description, setDescription] = useState(true)
+  const descStyle={
+    display:Description?"block":"none"
+  }
   return (
     <div className="movie-container">
-      <img src={props.movie.poster} alt={props.movie.name} className="movie-poster"></img>
+      <img src={movie.poster} alt={movie.name} className="movie-poster"></img>
       <div className="movie-specs">
-        <h2 className='movie-name'>{props.movie.name}</h2>
-        <p className='movie-rating'>{props.movie.rating}</p>
+        <h2 className='movie-name'>{movie.name}</h2>
+        <p style={style} className='movie-rating'>{movie.rating}</p>
 
       </div>
-      <p className='movie-summary'>{props.movie.summary}</p>
+      <button onClick={()=>setDescription(!Description)}>Toggle</button>
+      {Description?<p  className='movie-summary'>{movie.summary}</p>:null}
       
     </div>
   )
