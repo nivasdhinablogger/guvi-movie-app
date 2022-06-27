@@ -1,14 +1,17 @@
+.movie-container {
+  /* background-color: orange; */
+  width: 340px;
+  padding: 10px;
+}
+
+
 .movie-specs {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.movie-container {
-  /* background-color: orange; */
-  width: 340px;
-  padding: 10px;
-}
+
 
 .movie-poster {
   width: 340px;
