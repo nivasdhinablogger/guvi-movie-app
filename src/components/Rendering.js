@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Movies.css'
-import { Movies } from './Movies';
+import { AddMovie,MovieList } from './MovieList';
+
 
 function Rendering() {
-  const datas=[
+  const InitialData=[
     {
     name: "RRR",
     poster:
@@ -75,13 +76,13 @@ function Rendering() {
     
     }
     ];
+  const [Data,setData]=useState(InitialData);
+  
   return (
-    <div className='movie-list'>
-      {datas.map((data,i)=>{return <Movies movie={data} key={i}/>})} 
+    <div>
+      <AddMovie movie={Data} setMovies={setData} />
+      <MovieList datas={Data} />
     </div>
   )
 }
 export default Rendering
-
-
-

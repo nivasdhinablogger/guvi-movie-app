@@ -38,3 +38,13 @@
   justify-content: space-around;
   /* gap: 10px; */
 }
+
+.add-movie-form{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: stretch;
+  gap:10px;
+  padding: 24px;
+}

@@ -4,3 +4,4 @@ Step 1  :   Create the CSS file with proper class name.
 Step 2  :   Create the schema of data that has to be displayed.(Mostly will be in array of objects)
 Step 3  :   Create a template component for displaying the schema data with proper CSS class name.
 Step 4  :   Populate each data into the template component.
+Step 5  :   
